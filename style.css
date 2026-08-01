@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #111;
+    font-family: Arial, sans-serif;
+}
+
+#room {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#roomImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.hotspot{
+    position:absolute;
+    cursor:pointer;
+
+}
+
+#guitarHotspot{
+
+    left:43%;
+    top:47%;
+
+    width:18%;
+    height:10%;
+
+}
+#popupOverlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.65);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:1000;
+}
+
+#popup{
+
+    width:80%;
+    max-width:900px;
+
+    height:80%;
+
+    background:#181818;
+
+    border-radius:18px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+#popupContent{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:30px;
+
+}
+
+#closePopup{
+
+    position:absolute;
+
+    right:20px;
+    top:20px;
+
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+audio{
+    border-radius:12px;
+}
+#laptopHotspot{
+    left: 21.5%;
+    top:70%;
+    width:12%;
+    height:8%;
+}
+
+#mugHotspot{
+    left: 34.3%;
+    top: 72%;
+    width:4%;
+    height:6%;
+}
+
+#pandaHotspot{
+    left:51.5%;
+    top:39%;
+    width:5.5%;
+    height:8.8%;
+}
+
+#cameraHotspot{
+    left:66%;
+    top:70%;
+    width:6%;
+    height:8%;
+}
+
+#sketchbookHotspot{
+    left: 69.5%;
+    top:77%;
+    width:8%;
+    height:5%;
+}
+/* ================================================= */
+/*                macOS Photos Window                */
+/* ================================================= */
+
+:root{
+
+    --mac-bg: rgba(245,245,247,.94);
+    --mac-border: rgba(255,255,255,.55);
+    --mac-shadow: rgba(0,0,0,.28);
+
+}
+
+#popup{
+
+    width:78%;
+    max-width:1100px;
+    height:82%;
+
+    background:var(--mac-bg);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 30px 70px var(--mac-shadow);
+
+    border:1px solid var(--mac-border);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+}
+
+
+/* ================= TITLE BAR ================= */
+
+.mac-titlebar{
+
+    height:52px;
+
+    background:#f3f3f4;
+
+    border-bottom:1px solid #dddddd;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    user-select:none;
+
+}
+
+.mac-left{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.mac-dot{
+
+    width:13px;
+    height:13px;
+
+    border-radius:50%;
+
+}
+
+.red{
+
+    background:#ff5f57;
+
+}
+
+.yellow{
+
+    background:#febc2e;
+
+}
+
+.green{
+
+    background:#28c840;
+
+}
+
+.mac-title{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4d4d4d;
+
+    letter-spacing:.2px;
+
+}
+
+
+/* ================= CONTENT ================= */
+
+.mac-content{
+
+    width:100%;
+
+    height:calc(100% - 52px);
+
+    background:#fafafa;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+
+/* ================= IMAGE ================= */
+
+.mac-photo{
+
+    max-width:88%;
+
+    max-height:82%;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+    transition:.35s ease;
+
+}
+
+
+/* ================= ARROWS ================= */
+
+.mac-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:58px;
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(12px);
+
+    font-size:26px;
+
+    transition:.25s;
+
+}
+
+.mac-arrow:hover{
+
+    transform:translateY(-50%) scale(1.08);
+
+}
+
+.left-arrow{
+
+    left:24px;
+
+}
+
+.right-arrow{
+
+    right:24px;
+
+}
+
+
+/* ================= COUNTER ================= */
+
+.mac-counter{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:rgba(255,255,255,.9);
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    color:#444;
+
+    font-weight:500;
+
+}
+
+
+/* ================= CLOSE BUTTON ================= */
+
+#closePopup{
+
+    display:none;
+
+}
+
+
+/* ================= ANIMATION ================= */
+
+.mac-photo{
+
+    animation:fadePhoto .25s ease;
+
+}
+
+@keyframes fadePhoto{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
